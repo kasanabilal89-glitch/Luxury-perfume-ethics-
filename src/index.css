@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-display: "Cinzel", "Times New Roman", serif;
+  --font-sans: "Montserrat", -apple-system, BlinkMacSystemFont, sans-serif;
+
+  --color-gold-50: #fbf7ee;
+  --color-gold-100: #f6edd7;
+  --color-gold-200: #edd8ad;
+  --color-gold-300: #e2c07d;
+  --color-gold-400: #d6a855;
+  --color-gold-500: #c9a568;
+  --color-gold-600: #b58d44;
+  --color-gold-700: #936e32;
+  --color-gold-800: #76562b;
+  --color-gold-900: #624626;
+
+  --color-noir-950: #070706;
+  --color-noir-900: #0d0c0a;
+  --color-noir-850: #14120f;
+  --color-noir-800: #1a1713;
+}
+
+/* Film grain subtle texture */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 999;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* Luxury gold shimmer & reflections */
+.gold-gradient-text {
+  background: linear-gradient(135deg, #fbf7ee 0%, #e2c07d 45%, #c9a568 70%, #edd8ad 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-border {
+  border-color: rgba(201, 165, 104, 0.25);
+}
+
+.gold-glow {
+  box-shadow: 0 0 45px -10px rgba(201, 165, 104, 0.22);
+}
+
+.subtle-glass {
+  background: rgba(13, 12, 10, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(201, 165, 104, 0.15);
+}
+
+/* Custom smooth scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #070706;
+}
+::-webkit-scrollbar-thumb {
+  background: #2b251d;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #c9a568;
+}
+
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(1deg);
+  }
+}
+
+.animate-float-slow {
+  animation: floatSlow 7s ease-in-out infinite;
+}

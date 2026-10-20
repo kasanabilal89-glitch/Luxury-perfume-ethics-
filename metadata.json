@@ -1,0 +1,6 @@
+{
+  "name": "ETHICS — Luxury 3D Perfume",
+  "description": "Production-ready luxury perfume website for ETHICS featuring interactive 3D fragrance flacons, olfactory notes explorer, and brand storytelling.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
